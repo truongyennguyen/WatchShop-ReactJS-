@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as actions from './../actions/index';
+
 import Drawer from "@material-ui/core/Drawer";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -7,10 +8,15 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+
 import WatchIcon from "@material-ui/icons/Watch";
 import StarIcon from "@material-ui/icons/Star";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import CoupleIcon from "@material-ui/icons/Wc";
+
+import ManIcon from "./ManIcon";
+import WomanIcon from "./WomanIcon";
+
 import { connect } from "react-redux";
 
 const styles = theme => ({
@@ -19,7 +25,7 @@ const styles = theme => ({
 	},
 
 	space : {
-		minHeight: 120
+		minHeight: 55
 	}
 
 });
@@ -36,6 +42,7 @@ class MenuToggle extends Component {
 					<div className={classes.space} />
 					<div className={classes.listMenu}>
 						<List>
+							<Divider />
 							<ListItem button onClick={this.onToggleNav}>
 								<ListItemIcon>
 									<WatchIcon />
@@ -44,13 +51,13 @@ class MenuToggle extends Component {
 							</ListItem>
 							<ListItem button onClick={this.onToggleNav}>
 								<ListItemIcon>
-
+									<ManIcon />
 								</ListItemIcon>
 								<ListItemText primary="Nam" />
 							</ListItem>
 							<ListItem button onClick={this.onToggleNav}>
 								<ListItemIcon>
-
+									<WomanIcon />
 								</ListItemIcon>
 								<ListItemText primary="Nữ" />
 							</ListItem>

@@ -31,22 +31,22 @@ const styles = theme => ({
     appBar: {
         zIndex: 1300,
     },
-    //search props for search bar
+
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
+        backgroundColor: fade(theme.palette.common.black, 0.1),
         '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
+          backgroundColor: fade(theme.palette.common.black, 0.1),
         },
         marginRight: theme.spacing.unit * 2,
         marginLeft: 0,
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing.unit * 3,
-            width: 'auto',
+          width: 'auto',
         },
-    },
+      },
     searchIcon: {
         width: theme.spacing.unit * 9,
         height: '100%',
@@ -58,8 +58,6 @@ const styles = theme => ({
     },
     inputRoot: {
         color: 'inherit',
-        width: '100%',
-        backgroundColor: '#EAE9E8'
     },
     inputInput: {
         paddingTop: theme.spacing.unit,
