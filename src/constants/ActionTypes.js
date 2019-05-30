@@ -1,1 +1,3 @@
-export const OPEN_TOGGLE_NAV = "OPEN_TOGGLE_NAV";
+export const OPEN_MENU = "OPEN_MENU";
+
+export const OPEN_CART = "OPEN_CART";

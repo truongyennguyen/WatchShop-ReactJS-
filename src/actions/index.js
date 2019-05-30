@@ -1,7 +1,14 @@
 import * as types from './../constants/ActionTypes';
 
-export const isShowNav = () => {
+export const ShowMenu = () => {
     return {
-        type: types.OPEN_TOGGLE_NAV
+        type: types.OPEN_MENU
     }
+}
+
+export const ShowCart = () => {
+    return {
+        type: types.OPEN_CART
+    }
+
 }

@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 
 import Header from './components/Header';
-import MenuToggle from './components/MenuToggle';
+import Menu from './components/Menu';
+import Cart from './components/Cart';
 import MainBody from './components/MainBody'
 import ProductDescription from './components/ProductDescription';
 import './App.css';
@@ -14,9 +15,10 @@ class App extends Component {
 			<Router>
 				<React.Fragment>
 					<Header />
-					<MenuToggle />
+					<Menu />
+					<Cart />
 					<Route exact path="/" component={MainBody} />
-					<Route path="/about" component={ProductDescription} exact/>
+					<Route path="/description" component={ProductDescription} exact/>
 				</React.Fragment>
 			</Router>
 			

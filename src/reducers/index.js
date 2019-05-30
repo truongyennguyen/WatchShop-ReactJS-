@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import isShowNav from './isShowNav';
+import ShowMenu from './ShowMenu';
+import ShowCart from './ShowCart'
 
 const myReducer = combineReducers({
-    isShowNav,
+    ShowMenu,
+    ShowCart
 });
 
 export default myReducer;

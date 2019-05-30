@@ -21,6 +21,8 @@ import CartIcon from '@material-ui/icons/ShoppingCart';
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
 
+import { Link } from 'react-router-dom';
+
 const styles = theme => ({
     root: {
         width: '100%',
@@ -74,19 +76,25 @@ const styles = theme => ({
 
 
 class Header extends Component {
-    onToggleNav = () => {
-        this.props.onToggleNav()
-    }
+    onToggleMenu = () => {
+        this.props.onToggleMenu()
+    };
+
+    onToggleCart = () => {
+        this.props.onToggleCart()
+    };
+
     render() {
         const { classes } = this.props;
+        const MyLink = React.forwardRef((props, ref) => <Link {...props} innerRef={ref} style={{ textDecoration: 'none' }}/>);
         return (
             <header className={classes.root}>
                 <AppBar color="inherit" className={classes.appBar}>
                     <Toolbar>
-                        <IconButton color="inherit" className={"remove_outline"} onClick={this.onToggleNav}>
+                        <IconButton color="inherit" className={"remove_outline"} onClick={this.onToggleMenu}>
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="h6" color="inherit" noWrap>
+                        <Typography variant="h6" color="inherit" noWrap component={MyLink} to="/">
                             Watch Shop
                         </Typography>
                         {/* search bar */}
@@ -105,7 +113,7 @@ class Header extends Component {
                         <div className={classes.grow} />
                         <div>
                             <Tooltip title="Trang chủ">
-                                <IconButton className="remove_outline">
+                                <IconButton component={Link} className="remove_outline" to="/">
                                     <HomeIcon />
                                 </IconButton>
                             </Tooltip>
@@ -125,7 +133,7 @@ class Header extends Component {
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title="Giỏ đồ">
-                                <IconButton className="remove_outline">
+                                <IconButton className="remove_outline" onClick={this.onToggleCart}>
                                     <Badge badgeContent={4} color="secondary">
                                         <CartIcon />
                                     </Badge>
@@ -141,8 +149,11 @@ class Header extends Component {
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        onToggleNav: () => {
-            dispatch(actions.isShowNav())
+        onToggleMenu: () => {
+            dispatch(actions.ShowMenu())
+        },
+        onToggleCart: () => {
+            dispatch(actions.ShowCart())
         }
     }
 }

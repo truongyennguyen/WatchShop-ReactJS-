@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import { Link } from 'react-router-dom';
+
 const styles = theme => ({
     card: {
         maxWidth: 300,
@@ -26,13 +28,15 @@ const styles = theme => ({
 
 });
 
+
 class Product extends Component {
     render() {
         const { classes } = this.props;
+        const MyLink = React.forwardRef((props, ref) => <Link {...props} innerRef={ref} style={{ textDecoration: 'none' }}/>);
         return (
-            <Card className={classes.card} to="/about">
-                <CardActionArea>
-                    <CardMedia
+            <Card className={classes.card}>
+                <CardActionArea component={MyLink} to="/description">
+                    <CardMedia 
                         className={classes.media}
                         image={this.props.image}
                         title={this.props.name}
@@ -51,7 +55,7 @@ class Product extends Component {
                     <Button size="small" color="primary">
                         Thêm vào giỏ
                     </Button>
-                    <Button size="small" color="primary" to="/about">
+                    <Button size="small" color="primary" to="/description" component={Link}>
                         Chi tiết
                     </Button>
                 </CardActions>
