@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import Product from './Product';
+import Slider from './Slider';
 
 class MainBody extends Component{
     render(){
         return(
             <div>
+				<div className="row" style={{height:100}}>
+				</div>
+				<div className="row">
+					<Slider />
+				</div>
                 <div className="row">
 					<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 					<Product 

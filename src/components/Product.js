@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
     card: {
         maxWidth: 300,
-        marginTop: 200,
+        marginTop: 100,
         marginLeft: 20
     },
     media: {
@@ -30,7 +30,7 @@ class Product extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <Card className={classes.card}>
+            <Card className={classes.card} to="/about">
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
@@ -51,7 +51,7 @@ class Product extends Component {
                     <Button size="small" color="primary">
                         Thêm vào giỏ
                     </Button>
-                    <Button size="small" color="primary">
+                    <Button size="small" color="primary" to="/about">
                         Chi tiết
                     </Button>
                 </CardActions>
